@@ -1,0 +1,723 @@
+/* 
+==================================================
+   PSUITE ERP - INVENTORY MANAGEMENT V2
+   PREMIUM ENTERPRISE SAAS STYLES
+   Theme: Dark Navy & Teal Accent
+================================================== 
+*/
+
+:root {
+    --inv-primary: #07111F;
+    --inv-secondary: #0B1220;
+    --inv-accent: #14B8A6;
+    --inv-accent-light: #5EEAD4;
+    --inv-bg-light: #F8FAFC;
+    --inv-bg-white: #FFFFFF;
+    --inv-text-heading: #0F172A;
+    --inv-text-body: #475569;
+    --inv-text-light: #F1F5F9;
+    --inv-border: #E2E8F0;
+    --inv-border-dark: rgba(255,255,255,0.1);
+}
+
+/* =========================================
+   1. FULL SCREEN CINEMATIC HERO (DARK)
+========================================= */
+.inv-hero-section {
+    position: relative;
+    padding: 12rem 0 8rem;
+    background: linear-gradient(135deg, var(--inv-primary) 0%, var(--inv-secondary) 100%);
+    overflow: hidden;
+    color: var(--inv-bg-white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.inv-hero-bg-effects {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(94, 234, 212, 0.1) 0%, transparent 40%),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.inv-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.inv-eyebrow {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(20, 184, 166, 0.1);
+    color: var(--inv-accent-light);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(20, 184, 166, 0.3);
+}
+
+.inv-heading {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--inv-bg-white);
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.inv-heading span {
+    color: var(--inv-accent);
+}
+
+.inv-subheading {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+/* Feature Pills in Hero */
+.inv-hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.inv-hero-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--inv-bg-white);
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.inv-hero-pill svg {
+    color: var(--inv-accent);
+}
+
+/* Magnetic Call-To-Action Buttons */
+.inv-cta-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.inv-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.inv-btn-primary {
+    background: var(--inv-accent);
+    color: var(--inv-primary);
+    border: 1px solid var(--inv-accent);
+}
+
+.inv-btn-primary:hover {
+    background: var(--inv-accent-light);
+    border-color: var(--inv-accent-light);
+    box-shadow: 0 10px 20px rgba(20, 184, 166, 0.3);
+    transform: translateY(-2px);
+}
+
+.inv-btn-secondary {
+    background: transparent;
+    color: var(--inv-bg-white);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.inv-btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--inv-bg-white);
+}
+
+/* Hero Analytics Visual */
+.inv-hero-visual {
+    position: relative;
+    perspective: 1000px;
+}
+
+.inv-dashboard-main {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: rotateY(-5deg) rotateX(5deg);
+    transition: transform 0.5s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.inv-hero-visual:hover .inv-dashboard-main {
+    transform: rotateY(0deg) rotateX(0deg);
+}
+
+.inv-floating-card {
+    position: absolute;
+    background: rgba(11, 18, 32, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    z-index: 10;
+}
+
+.inv-fc-1 { top: -20px; left: -20px; animation: invFloat 6s ease-in-out infinite; }
+.inv-fc-2 { bottom: 40px; right: -30px; animation: invFloat 7s ease-in-out infinite reverse; }
+.inv-fc-3 { top: 50%; right: -20px; animation: invFloat 8s ease-in-out infinite; }
+
+.inv-fc-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--inv-accent);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.inv-fc-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   2. TRUST MARQUEE
+========================================= */
+.inv-marquee-section {
+    background: var(--inv-secondary);
+    padding: 2rem 0;
+    overflow: hidden;
+    color: var(--inv-bg-white);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.inv-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: invMarquee 30s linear infinite;
+}
+
+.inv-marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 3rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   3. APPLE-STYLE STICKY CARD STACK
+========================================= */
+.inv-scroll-stack {
+    padding: 8rem 0;
+    background: var(--inv-bg-light);
+}
+
+.inv-stack-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.inv-card-stack {
+    position: sticky;
+    top: 15vh;
+    height: 70vh;
+    background: var(--inv-bg-white);
+    border: 1px solid var(--inv-border);
+    border-radius: 24px;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    transform-origin: top center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.inv-stack-content h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--inv-text-heading);
+    margin-bottom: 1.5rem;
+}
+
+.inv-stack-content p {
+    font-size: 1.2rem;
+    color: var(--inv-text-body);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.inv-stack-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.inv-stack-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: var(--inv-text-heading);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.inv-stack-list svg {
+    color: var(--inv-accent);
+}
+
+.inv-stack-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Light Eyebrow for White Sections */
+.inv-eyebrow-light {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(20, 184, 166, 0.1);
+    color: var(--inv-accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+}
+
+/* =========================================
+   4. BENTO GRID OVERVIEW
+========================================= */
+.inv-bento-section {
+    padding: 8rem 0;
+    background: var(--inv-bg-white);
+}
+
+.inv-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    gap: 1.5rem;
+}
+
+.inv-bento-card {
+    background: var(--inv-bg-light);
+    border: 1px solid var(--inv-border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inv-bento-card:hover {
+    border-color: var(--inv-accent);
+    box-shadow: 0 10px 30px rgba(20, 184, 166, 0.05);
+    transform: translateY(-5px);
+}
+
+.inv-bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: linear-gradient(135deg, var(--inv-primary) 0%, var(--inv-secondary) 100%);
+    color: var(--inv-bg-white);
+    border: none;
+}
+
+.inv-bento-large h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--inv-bg-white);
+}
+
+.inv-bento-large p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+.inv-bento-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--inv-bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--inv-accent);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.inv-bento-small h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--inv-text-heading);
+}
+
+/* =========================================
+   5. INTERACTIVE HOVER CARDS (FEATURES)
+========================================= */
+.inv-feature-grid {
+    padding: 8rem 0;
+    background: var(--inv-bg-light);
+}
+
+.inv-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.inv-hover-card {
+    background: var(--inv-bg-white);
+    border: 1px solid var(--inv-border);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.inv-hover-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: var(--inv-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.inv-hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.inv-hover-card:hover::before {
+    transform: scaleX(1);
+}
+
+.inv-hc-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 2rem;
+    background: var(--inv-bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--inv-accent);
+    transition: all 0.3s ease;
+}
+
+.inv-hover-card:hover .inv-hc-icon {
+    background: var(--inv-accent);
+    color: var(--inv-bg-white);
+    transform: scale(1.1);
+}
+
+.inv-hover-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--inv-text-heading);
+    margin-bottom: 1rem;
+}
+
+.inv-hover-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.inv-hover-card li {
+    color: var(--inv-text-body);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* =========================================
+   6. HORIZONTAL MACBOOK SHOWCASE
+========================================= */
+.inv-macbook-track {
+    background: var(--inv-bg-white);
+    padding: 4rem 0; /* Reduced vertical padding */
+    overflow: hidden;
+}
+
+.inv-macbook-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.inv-scroll-wrapper {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 3rem; /* Tighter gap for multi-card layout */
+    padding: 0 5vw;
+}
+
+.inv-mockup-panel {
+    width: 35vw; /* Forces 3 items on screen */
+    min-width: 350px; /* Protects mobile layout */
+    max-width: 800px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inv-mockup-panel h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--inv-text-heading);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.inv-macbook-frame {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.inv-macbook-frame img {
+    max-width: 100%;
+    max-height: 55vh; /* Crucial: Prevents bottom from cutting off! */
+    width: auto;
+    height: auto; 
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    display: block;
+}
+
+/* =========================================
+   7. DARK SECTION: SUPPLY CHAIN INTELLIGENCE
+========================================= */
+.inv-dark-section {
+    padding: 8rem 0;
+    background: var(--inv-secondary);
+    color: var(--inv-bg-white);
+    position: relative;
+}
+
+.inv-dark-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.inv-dark-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 3rem;
+    transition: all 0.3s ease;
+}
+
+.inv-dark-card:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: var(--inv-accent);
+    transform: translateY(-5px);
+}
+
+.inv-dark-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--inv-bg-white);
+}
+
+.inv-dark-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.inv-dark-card li {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* =========================================
+   8. ECOSYSTEM & INTEGRATIONS
+========================================= */
+.inv-ecosystem {
+    padding: 8rem 0;
+    background: var(--inv-bg-white);
+    text-align: center;
+}
+
+.inv-eco-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.inv-eco-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.inv-eco-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--inv-bg-light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--inv-accent);
+    font-size: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.inv-eco-item span {
+    font-weight: 700;
+    color: var(--inv-text-heading);
+}
+
+/* =========================================
+   9. CTA FOOTER
+========================================= */
+.inv-cta-section {
+    padding: 10rem 0;
+    background: linear-gradient(135deg, var(--inv-primary) 0%, var(--inv-secondary) 100%);
+    text-align: center;
+    color: var(--inv-bg-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.inv-cta-heading {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+    color: var(--inv-bg-white);
+}
+
+/* =========================================
+   ANIMATIONS & UTILITIES
+========================================= */
+@keyframes invFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes invMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.gsap-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+    .inv-hero-grid, .inv-card-stack, .inv-bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .inv-card-stack {
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+    .inv-bento-large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .inv-grid-container, .inv-dark-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .inv-heading {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+    .inv-mockup-panel {
+        width: 60vw;
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .inv-heading, .inv-cta-heading { 
+        font-size: clamp(2rem, 8vw, 3rem); 
+        word-wrap: break-word;
+    }
+    .inv-grid-container, .inv-dark-grid {
+        grid-template-columns: 1fr;
+    }
+    .inv-scroll-wrapper {
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    .inv-mockup-panel {
+        width: 85vw;
+        min-width: unset;
+    }
+    .inv-mockup-panel h3 {
+        font-size: 1.5rem;
+    }
+}

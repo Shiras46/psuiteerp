@@ -1,0 +1,702 @@
+/* 
+==================================================
+   PSUITE ERP - HUMAN RESOURCE MANAGEMENT V2
+   PREMIUM ENTERPRISE SAAS STYLES
+   Theme: Primary Teal (#16C2BF)
+================================================== 
+*/
+
+:root {
+    --sol-primary: #16C2BF;
+    --sol-primary-dark: #0B7A78;
+    --sol-primary-light: #7ED9D7;
+    --sol-bg-white: #FFFFFF;
+    --sol-bg-soft: #F7F8FA;
+    --sol-bg-section: #F3F8F8;
+    --sol-text-heading: #0F172A;
+    --sol-text-body: #475569;
+    --sol-border: #DDE7E7;
+}
+
+/* Base resets handled by global CSS, focusing on module-specific styles here */
+
+/* =========================================
+   1. PREMIUM HERO SECTION
+========================================= */
+.sol-hero-section {
+    position: relative;
+    padding: 12rem 0 8rem;
+    background: var(--sol-bg-white);
+    overflow: hidden;
+}
+
+.sol-hero-bg-gradient {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(22,194,191,0.08) 0%, rgba(255,255,255,0) 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.sol-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.sol-eyebrow {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--sol-bg-section);
+    color: var(--sol-primary-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--sol-border);
+}
+
+.sol-heading {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--sol-text-heading);
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.sol-heading span {
+    color: var(--sol-primary);
+}
+
+.sol-subheading {
+    font-size: 1.25rem;
+    color: var(--sol-text-body);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+/* Feature Pills in Hero */
+.sol-hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.sol-hero-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--sol-text-heading);
+    font-size: 0.95rem;
+}
+
+.sol-hero-pill svg {
+    color: var(--sol-primary);
+}
+
+/* Magnetic Call-To-Action Buttons */
+.sol-cta-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.sol-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sol-btn-primary {
+    background: var(--sol-text-heading);
+    color: var(--sol-bg-white);
+    border: 1px solid var(--sol-text-heading);
+}
+
+.sol-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--sol-primary);
+    z-index: -1;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sol-btn-primary:hover::before {
+    transform: translateY(0);
+}
+
+.sol-btn-primary:hover {
+    border-color: var(--sol-primary);
+    box-shadow: 0 10px 20px rgba(22,194,191,0.2);
+}
+
+.sol-btn-secondary {
+    background: transparent;
+    color: var(--sol-text-heading);
+    border: 1px solid var(--sol-border);
+}
+
+.sol-btn-secondary:hover {
+    background: var(--sol-bg-section);
+    border-color: var(--sol-primary-light);
+}
+
+/* Hero Analytics Visual */
+.sol-hero-visual {
+    position: relative;
+    perspective: 1000px;
+}
+
+.sol-dashboard-main {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    transform: rotateY(-5deg) rotateX(5deg);
+    transition: transform 0.5s ease;
+}
+
+.sol-hero-visual:hover .sol-dashboard-main {
+    transform: rotateY(0deg) rotateX(0deg);
+}
+
+.sol-floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.sol-fc-1 { top: -20px; left: -20px; animation: solFloat 6s ease-in-out infinite; }
+.sol-fc-2 { bottom: 40px; right: -30px; animation: solFloat 7s ease-in-out infinite reverse; }
+
+.sol-fc-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--sol-primary);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.sol-fc-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sol-text-body);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   2. TRUST MARQUEE (DARK)
+========================================= */
+.sol-marquee-section {
+    background: linear-gradient(90deg, var(--sol-primary-dark) 0%, var(--sol-primary) 100%);
+    padding: 2rem 0;
+    overflow: hidden;
+    color: var(--sol-bg-white);
+}
+
+.sol-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: solMarquee 30s linear infinite;
+}
+
+.sol-marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 3rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   3. APPLE-STYLE STICKY CARD STACK
+========================================= */
+.sol-scroll-stack {
+    padding: 8rem 0;
+    background: var(--sol-bg-white);
+}
+
+.sol-stack-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.sol-card-stack {
+    position: sticky;
+    top: 15vh;
+    height: 70vh;
+    background: var(--sol-bg-soft);
+    border: 1px solid var(--sol-border);
+    border-radius: 24px;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    transform-origin: top center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.sol-stack-content h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--sol-text-heading);
+    margin-bottom: 1.5rem;
+}
+
+.sol-stack-content p {
+    font-size: 1.2rem;
+    color: var(--sol-text-body);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.sol-stack-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sol-stack-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: var(--sol-text-heading);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.sol-stack-list svg {
+    color: var(--sol-primary);
+}
+
+.sol-stack-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   4. BENTO GRID OVERVIEW
+========================================= */
+.sol-bento-section {
+    padding: 8rem 0;
+    background: var(--sol-bg-white);
+}
+
+.sol-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    gap: 1.5rem;
+}
+
+.sol-bento-card {
+    background: var(--sol-bg-soft);
+    border: 1px solid var(--sol-border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sol-bento-card:hover {
+    border-color: var(--sol-primary-light);
+    box-shadow: 0 10px 30px rgba(22,194,191,0.05);
+    transform: translateY(-5px);
+}
+
+.sol-bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: linear-gradient(135deg, var(--sol-text-heading) 0%, #1e293b 100%);
+    color: var(--sol-bg-white);
+    border: none;
+}
+
+.sol-bento-large h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.sol-bento-large p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+.sol-bento-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--sol-bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sol-primary);
+    margin-bottom: 1.5rem;
+}
+
+.sol-bento-small h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--sol-text-heading);
+}
+
+/* =========================================
+   5. INTERACTIVE HOVER CARDS (FEATURES)
+========================================= */
+.sol-feature-grid {
+    padding: 8rem 0;
+    background: var(--sol-bg-soft);
+}
+
+.sol-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.sol-hover-card {
+    background: var(--sol-bg-white);
+    border: 1px solid var(--sol-border);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.sol-hover-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: var(--sol-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.sol-hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.sol-hover-card:hover::before {
+    transform: scaleX(1);
+}
+
+.sol-hc-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 2rem;
+    background: var(--sol-bg-section);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sol-primary);
+    transition: all 0.3s ease;
+}
+
+.sol-hover-card:hover .sol-hc-icon {
+    background: var(--sol-primary);
+    color: var(--sol-bg-white);
+    transform: scale(1.1);
+}
+
+.sol-hover-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--sol-text-heading);
+    margin-bottom: 1rem;
+}
+
+.sol-hover-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.sol-hover-card li {
+    color: var(--sol-text-body);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* =========================================
+   6. HORIZONTAL MACBOOK SHOWCASE
+========================================= */
+.sol-macbook-track {
+    background: var(--sol-bg-white);
+    padding: 4rem 0; /* Reduced vertical padding */
+    overflow: hidden;
+}
+
+.sol-macbook-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.sol-scroll-wrapper {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 3rem; /* Tighter gap for multi-card layout */
+    padding: 0 5vw;
+}
+
+.sol-mockup-panel {
+    width: 35vw; /* Forces 3 items on screen */
+    min-width: 350px; /* Protects mobile layout */
+    max-width: 800px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sol-mockup-panel h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--sol-text-heading);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.sol-macbook-frame {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sol-macbook-frame img {
+    max-width: 100%;
+    max-height: 55vh; /* Crucial: Prevents bottom from cutting off! */
+    width: auto;
+    height: auto; 
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    display: block;
+}
+
+/* =========================================
+   7. DARK BENTO DETAILS (INTELLIGENCE)
+========================================= */
+.sol-dark-bento {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, var(--sol-primary-dark) 0%, #054847 100%);
+    color: var(--sol-bg-white);
+}
+
+.sol-dark-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.sol-dark-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 3rem;
+    transition: all 0.3s ease;
+}
+
+.sol-dark-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--sol-primary-light);
+    transform: translateY(-5px);
+}
+
+.sol-dark-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.sol-dark-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sol-dark-card li {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* =========================================
+   8. ECOSYSTEM & INTEGRATIONS
+========================================= */
+.sol-ecosystem {
+    padding: 8rem 0;
+    background: var(--sol-bg-soft);
+    text-align: center;
+}
+
+.sol-eco-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.sol-eco-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sol-eco-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--sol-bg-white);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sol-primary);
+    font-size: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.sol-eco-item span {
+    font-weight: 700;
+    color: var(--sol-text-heading);
+}
+
+/* =========================================
+   9. CTA FOOTER
+========================================= */
+.sol-cta-section {
+    padding: 10rem 0;
+    background: radial-gradient(circle at center, var(--sol-primary) 0%, var(--sol-primary-dark) 100%);
+    text-align: center;
+    color: var(--sol-bg-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.sol-cta-heading {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+}
+
+.sol-cta-section .sol-btn-primary {
+    background: var(--sol-bg-white);
+    color: var(--sol-primary-dark);
+    border-color: var(--sol-bg-white);
+}
+
+.sol-cta-section .sol-btn-primary:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.sol-cta-section .sol-btn-secondary {
+    color: var(--sol-bg-white);
+    border-color: rgba(255,255,255,0.5);
+}
+
+.sol-cta-section .sol-btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--sol-bg-white);
+}
+
+/* =========================================
+   ANIMATIONS & UTILITIES
+========================================= */
+@keyframes solFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes solMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.gsap-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+    .sol-hero-grid, .sol-card-stack, .sol-bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .sol-card-stack {
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+    .sol-bento-large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .sol-grid-container, .sol-dark-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sol-heading { font-size: 3rem; }
+    .sol-grid-container, .sol-dark-grid {
+        grid-template-columns: 1fr;
+    }
+}
