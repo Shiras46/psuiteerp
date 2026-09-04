@@ -97,7 +97,7 @@
                     class="nav-link {{ request()->routeIs('clients') ? 'active' : '' }}">Clients</a>
                 <a href="{{ route('contact') }}"
                     class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
-                <a href="https://www.psuiteerp.com/login" class="btn"
+                <a href="https://app.psuiteerp.com/login" class="btn"
                     style="background-color: #4dd0e1; color: white; border-color: #4dd0e1; margin-left: auto;">Login</a>
                 <a href="{{ route('book-demo') }}" class="btn btn-primary"
                     style="margin-left: 1rem; background-color: #4dd0e1; border-color: #4dd0e1; color: white;">Book
@@ -124,7 +124,7 @@
                         class="md-link {{ request()->routeIs('clients') ? 'active' : '' }}">CLIENTS</a>
                     <a href="{{ route('contact') }}"
                         class="md-link {{ request()->routeIs('contact') ? 'active' : '' }}">CONTACT</a>
-                    <a href="https://www.psuiteerp.com/login" class="md-link md-btn"
+                    <a href="https://app.psuiteerp.com/login" class="md-link md-btn"
                         style="background-color: #4dd0e1; color: white; border: none; margin-top: 0.5rem;">LOGIN</a>
                     <a href="{{ route('book-demo') }}" class="md-link md-btn"
                         style="background-color: #4dd0e1; color: white; border: none;">BOOK DEMO</a>
@@ -162,7 +162,7 @@
                     <a href="{{ route('solutions.index') }}" style="display: none !important;">All Solutions</a>
                     <a href="{{ route('clients') }}">Clients</a>
                     <a href="{{ route('contact') }}">Contact Us</a>
-                    <a href="https://www.psuiteerp.com/login"
+                    <a href="https://app.psuiteerp.com/login"
                         style="display: inline-block; background-color: #4dd0e1; color: white; padding: 8px 24px; border-radius: 30px; font-weight: 600; margin-top: 10px; width: fit-content;">Login</a>
                 </div>
                 <div class="footer-col">
