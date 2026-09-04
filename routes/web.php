@@ -11,3 +11,6 @@ Route::get('/book-demo', [PageController::class, 'bookDemo'])->name('book-demo')
 Route::post('/book-demo', [PageController::class, 'submitDemo'])->name('book-demo.submit');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
+
+// Redirect direct visits to /login to the main app
+Route::redirect('/login', 'https://app.psuiteerp.com/login');
